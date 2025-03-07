@@ -2,13 +2,24 @@ it('Sem testes ainda', () => {
     
 });
 
-const getSomething = () => 10
+const getSomething = () => {
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(12)
+        }, 1000)
+        
+    })
+}
 
 
-const system = () => {
+const system = async() => {
     console.log('Init')
-    const something = getSomething()
-    console.log(`Something is ${something}`)
+    const some = await getSomething()
+    
+    
+    console.log(`Something is ${some}`)
+    
+    // getSomething(something => console.log(`Something is ${something}`))
     console.log('End')
 }
 
